@@ -2,20 +2,22 @@ import React, { useState } from "react";
 import { Route, useHistory } from "react-router-dom";
 import { Button } from "reactstrap";
 import "./App.css";
-import background from "./logo.PNG";
+import background from "./logo.png";
 import DisplaySurvey from "./DisplaySurvey";
 import { useSelector } from "react-redux";
 
 function TakeSurvey(props) {
   const history = useHistory();
-  const surveyIdList = useSelector(globalStore => globalStore.surveys.map((survey) => survey.surveyId))
+  const surveyIdList = useSelector((globalStore) =>
+    globalStore.surveys.map((survey) => survey.surveyId)
+  );
   const displaySurvey = (surveyId) => {
     const result = surveyIdList.filter(
       (surveyIdcur) => surveyIdcur === surveyId
     );
     console.log(result);
     if (result !== undefined) {
-      history.push("/takeSurvey/"+surveyId);
+      history.push("/takeSurvey/" + surveyId);
     }
   };
   return (
@@ -42,7 +44,7 @@ function TakeSurvey(props) {
         );
       })}
       <Route path="/takeSurvey/:surveyId">
-        <DisplaySurvey/>
+        <DisplaySurvey />
       </Route>
     </div>
   );

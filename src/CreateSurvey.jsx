@@ -8,7 +8,7 @@ import {
 } from "reactstrap";
 
 import { useParams } from "react-router-dom";
-import background from "./logo.PNG";
+import background from "./logo.png";
 
 import MultiSelect from "./MultiSelect";
 import SingleSelect from "./SingleSelect";
